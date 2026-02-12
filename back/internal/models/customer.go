@@ -4,7 +4,7 @@ import "time"
 
 type Customer struct {
 	ID        int        `db:"id"`
-	UserID    *int       `db:"user_id"` // если интеграция с системой пользователей
+	UserID    *int       `db:"user_id"`
 	FirstName string     `db:"first_name"`
 	LastName  string     `db:"last_name"`
 	Email     string     `db:"email"`

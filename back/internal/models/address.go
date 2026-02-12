@@ -8,7 +8,7 @@ type Address struct {
 	City       string    `db:"city"`
 	Street     string    `db:"street"`
 	Building   string    `db:"building"`
-	Apartment  *string   `db:"apartment"` // может быть NULL
+	Apartment  *string   `db:"apartment"`
 	PostalCode *string   `db:"postal_code"`
 	CreatedAt  time.Time `db:"created_at"`
 	UpdatedAt  time.Time `db:"updated_at"`

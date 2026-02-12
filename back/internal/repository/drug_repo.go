@@ -95,7 +95,7 @@ func (r *drugRepository) GetAvailableInShop(ctx context.Context, shopID int) ([]
 	}
 	defer rows.Close()
 
-	// ✅ Всегда инициализируем пустым срезом, чтобы не возвращать nil
+
 	items := make([]models.ShopInventory, 0)
 
 	for rows.Next() {
@@ -105,7 +105,7 @@ func (r *drugRepository) GetAvailableInShop(ctx context.Context, shopID int) ([]
 			&item.Quantity, &item.PurchasePrice, &item.SellingPrice,
 			&item.ManufacturingDate, &item.ExpiryDate, &item.SupplierID,
 			&item.ReceivedAt, &item.LastUpdated,
-			&item.DrugName, // сканируем новые поля
+			&item.DrugName,
 			&item.DosageForm,
 			&item.Dosage,
 		)

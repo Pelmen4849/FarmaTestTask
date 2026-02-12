@@ -26,15 +26,8 @@ func SetupRouter(
 		api.GET("/drugs/:id", drugHandler.GetDrugByID)
 
 		// Заказы
-		api.POST("/orders", orderHandler.CreateOrder)
+		api.POST("/orders", orderHandler.CreateOrder) // ← ДОБАВЬТЕ ЭТУ СТРОКУ
 	}
-
-	// Административные маршруты (с аутентификацией) - заглушка
-	// admin := api.Group("/admin")
-	// admin.Use(middleware.AuthRequired())
-	// {
-	// 	admin.POST("/drugs", drugHandler.CreateDrug)
-	// }
 
 	return r
 }
