@@ -20,7 +20,6 @@ type OrderService interface {
 type orderService struct {
 	orderRepo repository.OrderRepository
 	drugRepo  repository.DrugRepository
-
 }
 
 type OrderItemRequest struct {
@@ -47,7 +46,6 @@ func (s *orderService) CreateOrder(ctx context.Context, customerID int, shopID i
 	var orderItems []models.OrderItem
 
 	for _, req := range items {
-		
 
 		item := models.OrderItem{
 			InventoryID: req.InventoryID,
