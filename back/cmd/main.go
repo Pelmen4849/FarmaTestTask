@@ -43,6 +43,7 @@ func main() {
 
 	// Настройка маршрутов
 	r := router.SetupRouter(drugHandler, orderHandler)
+	
 
 	// Запуск HTTP-сервера с graceful shutdown
 	srv := &http.Server{
