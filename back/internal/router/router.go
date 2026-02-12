@@ -26,7 +26,7 @@ func SetupRouter(
 		api.GET("/drugs/:id", drugHandler.GetDrugByID)
 
 		// Заказы
-		api.POST("/orders", orderHandler.CreateOrder) // ← ДОБАВЬТЕ ЭТУ СТРОКУ
+		api.POST("/orders", orderHandler.CreateOrder)
 	}
 
 	return r
