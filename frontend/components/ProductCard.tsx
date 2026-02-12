@@ -21,7 +21,7 @@ export default function ProductCard({
   dosageForm,
   dosage,
   stock,
-  imageUrl = `/images/drugs/${id}.jpg`, // значение по умолчанию
+  imageUrl = `/images/drugs/${id}.jpg`, 
 }: ProductCardProps) {
   const { addItem } = useCart();
 

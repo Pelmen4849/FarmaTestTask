@@ -20,7 +20,7 @@ type OrderService interface {
 type orderService struct {
 	orderRepo repository.OrderRepository
 	drugRepo  repository.DrugRepository
-	// при необходимости inventoryRepo и т.д.
+
 }
 
 type OrderItemRequest struct {
@@ -43,17 +43,11 @@ func (s *orderService) CreateOrder(ctx context.Context, customerID int, shopID i
 	// Генерируем уникальный номер заказа
 	orderNumber := uuid.New().String()[:8]
 
-	// В реальном проекте здесь нужно получить актуальные цены из inventory
-	// и проверить остатки (репозиторий уже проверит, но лучше предварительно)
 	var total float64
 	var orderItems []models.OrderItem
 
 	for _, req := range items {
-		// Здесь должен быть запрос к inventoryRepo для получения цены
-		// Пока используем заглушку
-		// inventory, err := s.inventoryRepo.GetByID(ctx, req.InventoryID)
-		// if err != nil { ... }
-		// if inventory.Quantity < req.Quantity { return nil, repository.ErrInsufficientStock }
+		
 
 		item := models.OrderItem{
 			InventoryID: req.InventoryID,
